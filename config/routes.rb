@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'items/new'
+    get 'items/show'
+    get 'items/index'
+    get 'items/edit'
+  end
   devise_for :users
   namespace :admin do
     # get 'orders/show'
-    resources :orders, :customers, :genres, :products, :sessions
+    resources :orders, :customers, :genres, :products, :sessions, :items
   end
   # namespace :admin do
   #   get 'customers/index'
